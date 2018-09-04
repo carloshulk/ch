@@ -60,7 +60,7 @@
     "twit": "^2.2.5",
     "unirest": "^0.5.1",
     "validator": "^7.0.0",
-    "wallet-address-validator": "git://github.com/PlanetPay/PlanetPay/wallet-address-validator"
+    "wallet-address-validator": "git://github.com/rupaya-project/wallet-address-validator"
   },
   "devDependencies": {
     "chai": "^3.5.0",
