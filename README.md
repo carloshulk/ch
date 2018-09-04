@@ -1,5 +1,5 @@
 
-Denarius [DNR] NodeJS Web Wallet
+PlanetPay [PLT] NodeJS Web Wallet
 =======================
 
 [![Dependency Status](https://david-dm.org/carsenk/denariusnodewallet/status.svg?style=flat)](https://david-dm.org/carsenk/denariusnodewallet) [![Build Status](https://travis-ci.org/carsenk/denariusnodewallet.svg?branch=master)](https://travis-ci.org/carsenk/denariusnodewallet) [![Join the chat at https://gitter.im/denariusproject/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/denariusproject/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link) [![Thinkful Pair on Node](https://tf-assets-staging.s3.amazonaws.com/badges/thinkful_repo_badge.svg)](http://start.thinkful.com/node/)
@@ -9,11 +9,9 @@ Denarius [DNR] NodeJS Web Wallet
 
 **Live Demo**: Currently unavailable
 
-Denarius Node Wallet - A NodeJS/MongoDB powered denariusd Web Wallet.
+PlanetPay Node Wallet - A NodeJS/MongoDB powered denariusd Web Wallet.
 
 Send and Receive Funds, Create new addresses, View Transactions, Edit your account, and more!
-
-Swap between your DNR Balance in USD and BTC prices calculated from http://coinmarketcap.com/currencies/denarius-dnr/
 
 2FA Authentication is included as well as QR Codes for addresses and 2FA!
 
@@ -23,13 +21,13 @@ Table of Contents
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
-- [Denarius Daemon Setup](#denarius-daemon-setup)
+- [PlanetPay Daemon Setup](#PlanetPay-daemon-setup)
 - [License](#license)
 
 Features
 --------
 
-- Send and Receive DNR
+- Send and Receive PLT
 - Wallet Addresses, Create new ones
 - View all transactions
 - Two Factor Authentication
@@ -60,7 +58,7 @@ Features
 Prerequisites
 -------------
 
-- [denariusd](https://github.com/carsenk/denarius)
+- [PlanetPay](https://github.com/PlanetPay/PlanetPay)
 - [MongoDB](https://www.mongodb.org/downloads)
 - [Node.js 6.0+](http://nodejs.org)
 - Command Line Tools (Optional)
@@ -77,10 +75,10 @@ The easiest way to get started is to clone the repository:
 
 ```bash
 # Get the latest snapshot
-git clone --depth=1 https://github.com/carsenk/denariusnodewallet.git denariuswallet
+git clone --depth=1 https://github.com/PlanetPay/PlanetPaynodewallet.git PlanetPlaywallet
 
 # Change directory
-cd denariuswallet
+cd PlanetPaywallet
 
 # Install NPM dependencies
 npm install
@@ -102,7 +100,7 @@ save you a lot of time in the long run, because you won't need to manually
 restart the server each time you make a small change in code. To install, run
 `sudo npm install -g nodemon`.
 
-Denarius Daemon Setup
+PlanetPay Daemon Setup
 ------------------
 
 You must have a Denarius daemon running on a local server or remote server (highly recommend using SSL)
