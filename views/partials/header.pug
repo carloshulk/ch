@@ -7,7 +7,7 @@
         span.icon-bar
         span.icon-bar
       .navbar-brand
-        img.res(src='../img/denarius.png', alt='Denarius', border='0')
+        img.res(src='../img/PlanetPay.png', alt='PlanetPay', border='0')
       if user
         .navbar-send.hidden-sm.hidden-md.hidden-lg.hidden-xl
           a.send(href='/withdraw')
@@ -17,8 +17,8 @@
         if !user
           li(class=(title == 'Home') ? 'active' : undefined)
             a(href='/') Home
-          li(class=(title == 'Gitter Chat') ? 'active' : undefined)
-            a(href='https://gitter.im/denariusproject/Lobby', target='_blank') Gitter Chat
+          li(class=(title == 'telegram Chat') ? 'active' : undefined)
+            a(href='https://t.me/planetpay', target='_blank') Telegram Chat
           li(class=(title == 'Contact') ? 'active' : undefined)
             a(href='/contact') Support
           li
@@ -35,7 +35,7 @@
           li(class=(title == 'Create Account') ? 'active' : undefined)
             a(href='/signup') Create Account
         else
-          li(class=(title == 'Send DNR') ? 'active' : undefined)
+          li(class=(title == 'Send PLT') ? 'active' : undefined)
             a(href='/withdraw')
               i.fa.fa-paper-plane 
               | SEND
