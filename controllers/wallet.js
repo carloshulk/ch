@@ -14,10 +14,10 @@ var sendJSONResponse = function (res, status, content) {
 
 // all config options are optional
 var client = new bitcoin.Client({
-    host: process.env.DNRHOST,
-    port: process.env.DNRPORT,
-    user: process.env.DNRUSER,
-    pass: process.env.DNRPASS,
+    host: process.env.PLTHOST,
+    port: process.env.PLTPORT,
+    user: process.env.PLTUSER,
+    pass: process.env.PLTPASS,
     timeout: 30000
 });
 
@@ -34,7 +34,7 @@ exports.getWithdraw = (req, res) => {
         balance = 0;
       }
     res.render('account/withdraw', {
-        title: 'Send DNR',
+        title: 'Send PLT',
         balance: balance
     });
   });
@@ -90,7 +90,7 @@ exports.wallet = function (req, res) {
 
             var qr = 'denarius:'+address;
 
-            unirest.get("https://api.coinmarketcap.com/v1/ticker/denarius-dnr/")
+            unirest.get("https://api.coinmarketcap.com/v1/ticker/PlanetPay/")
               .headers({'Accept': 'application/json'})
               .end(function (result) {
                 var usdprice = result.body[0]['price_usd'] * balance;
@@ -135,7 +135,7 @@ exports.address = function (req, res) {
 
         QRCode.toDataURL(qr, function(err, data_url) {
 
-        res.render('account/newaddress', { title: 'New DNR Address', user: req.user, address: address, data_url: data_url });
+        res.render('account/newaddress', { title: 'New PLT Address', user: req.user, address: address, data_url: data_url });
     });
   });
 };
@@ -153,11 +153,11 @@ exports.withdraw = (req, res, next) => {
     client.getBalance(`dnrw(${username})`, 10, function (error, balance, resHeaders) {
         if (error) return console.log(error);
 
-    var valid = WAValidator.validate(`${sendtoaddress}`, 'DNR');
+    var valid = WAValidator.validate(`${sendtoaddress}`, 'PLT');
 
     if (parseFloat(amount) - fee > balance) {
 
-        req.flash('errors', { msg: 'Withdrawal amount exceeds your DNR balance'});
+        req.flash('errors', { msg: 'Withdrawal amount exceeds your PLT balance'});
         return res.redirect('/withdraw');
 
     } else {
@@ -175,14 +175,14 @@ exports.withdraw = (req, res, next) => {
                 var sendtx = sendFromtx;
                 var vamount = parseFloat(`${amount}`);
 
-                req.flash('success', { msg: `Your ${vamount} DNR was sent successfully! TX ID: ${sendtx}` });
+                req.flash('success', { msg: `Your ${vamount} PLT was sent successfully! TX ID: ${sendtx}` });
                 return res.redirect('/withdraw');
             }
         });
 
     } else {
 
-        req.flash('errors', { msg: 'You entered an invalid Denarius (DNR) Address!' });
+        req.flash('errors', { msg: 'You entered an invalid PlanetPay (PLT) Address!' });
         return res.redirect('/withdraw');
     }
   }
